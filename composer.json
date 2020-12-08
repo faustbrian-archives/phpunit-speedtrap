@@ -1,0 +1,55 @@
+{
+    "name": "konceiver/phpunit-speedtrap",
+    "description": ":package_description",
+    "keywords": [
+        "konceiver",
+        "phpunit-speedtrap"
+    ],
+    "homepage": "https://github.com/konceiver/phpunit-speedtrap",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "brian@konceiver.dev",
+            "homepage": "https://konceiver.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "konceiver/stan": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Konceiver\\SpeedTrap\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Konceiver\\SpeedTrap\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test:coverage": "vendor/bin/phpunit --coverage-html=.coverage --coverage-clover=clover.xml",
+        "format": "vendor/bin/php-cs-fixer fix ./",
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=2G"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Konceiver\\SpeedTrap\\Providers\\SpeedTrapServiceProvider"
+            ],
+            "aliases": {
+                "SpeedTrap": "Konceiver\\SpeedTrap\\Facades\\SpeedTrap"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
