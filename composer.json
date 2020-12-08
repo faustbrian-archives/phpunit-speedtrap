@@ -40,16 +40,6 @@
     "config": {
         "sort-packages": true
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Konceiver\\SpeedTrap\\Providers\\SpeedTrapServiceProvider"
-            ],
-            "aliases": {
-                "SpeedTrap": "Konceiver\\SpeedTrap\\Facades\\SpeedTrap"
-            }
-        }
-    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
