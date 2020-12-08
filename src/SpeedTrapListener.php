@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestListenerDefaultImplementation;
 use PHPUnit\Framework\TestSuite;
 use PHPUnit\Util\Test as TestUtil;
 
-class SpeedTrapListener implements TestListener
+final class SpeedTrapListener implements TestListener
 {
     use TestListenerDefaultImplementation;
 
@@ -230,7 +230,9 @@ class SpeedTrapListener implements TestListener
      */
     protected function renderFooter()
     {
-        if ($hidden = $this->getHiddenCount()) {
+        $hidden = $this->getHiddenCount();
+
+        if ($hidden > 0) {
             echo sprintf('...and there %s %s more above your threshold hidden from view', $hidden === 1 ? 'is' : 'are', $hidden);
         }
     }
